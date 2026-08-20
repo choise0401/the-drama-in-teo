@@ -43,14 +43,14 @@ window.DRAMA_CONFIG = {
   */
   images: {
     landing: {
-      src: "",
+      src: "assets/the_drama.png",
       alt: "더 드라마 메인 이미지",
     },
     characters: {
-      emma: "",
-      charlie: "",
-      rachel: "",
-      mike: "",
+      emma: "assets/emma.png",
+      charlie: "assets/charlie.png",
+      rachel: "assets/rachel.png",
+      mike: "assets/mike.png",
     },
   },
 
