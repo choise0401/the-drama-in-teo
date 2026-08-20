@@ -577,8 +577,8 @@ button:focus-visible {
   font-size: clamp(52px, 15vw, 112px);
   font-style: normal;
   font-weight: 600;
-  letter-spacing: -0.15em;
-  line-height: 0.75;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
   white-space: nowrap;
 }
 
