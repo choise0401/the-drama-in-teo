@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Drama / Image Manager</title>
+    <link rel="stylesheet" href="image-manager.css" />
+  </head>
+  <body>
+    <header class="manager-header">
+      <div>
+        <p class="manager-kicker">THE DRAMA / GUEST TEST</p>
+        <h1>이미지 업로더</h1>
+        <p>사진을 선택하면 테스트 화면과 결과 카드에 연결할 수 있어요.</p>
+      </div>
+      <a href="editor.html">UI 에디터로 돌아가기 ↗</a>
+    </header>
+
+    <main class="manager-layout">
+      <section class="manager-panel">
+        <p class="manager-note">아래에서 사진을 선택한 뒤 설정 파일을 다운로드하세요. 다운로드된 `site-config.js`를 기존 파일과 교체하면 됩니다.</p>
+        <div id="image-slots" class="image-slots"></div>
+        <div class="manager-actions">
+          <button id="download-config" type="button">설정 파일 다운로드 ↓</button>
+          <button id="clear-images" class="clear-button" type="button">이미지 선택 초기화</button>
+        </div>
+        <p class="manager-warning">사진은 설정 파일 안에 저장되는 방식이라, 고화질 사진을 여러 장 넣으면 파일이 커질 수 있어요. 최종 배포 때는 작은 JPG나 WebP를 사용하는 걸 추천해요.</p>
+      </section>
+
+      <section class="manager-preview">
+        <p class="preview-label">LIVE IMAGE PREVIEW</p>
+        <div id="preview-grid" class="preview-grid"></div>
+      </section>
+    </main>
+
+    <script src="site-config.js"></script>
+    <script src="image-manager.js"></script>
+  </body>
+</html>

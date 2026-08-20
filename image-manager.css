@@ -1,0 +1,208 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  --ink: #171821;
+  --muted: #77736b;
+  --line: #e3ddd3;
+  --paper: #f7f3eb;
+  --rose: #d88678;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+}
+
+button,
+input { font: inherit; }
+
+.manager-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  max-width: 1120px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+  padding: 36px 28px 25px;
+}
+
+.manager-kicker,
+.preview-label {
+  margin: 0 0 8px;
+  color: var(--rose);
+  font-family: "Han Sans Neo", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+h1 { margin: 0; font-size: clamp(28px, 5vw, 48px); letter-spacing: -.08em; }
+
+.manager-header p:not(.manager-kicker) {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: -.04em;
+}
+
+.manager-header a {
+  align-self: flex-end;
+  color: var(--ink);
+  font-family: "Han Sans Neo", Arial, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.manager-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 490px) minmax(360px, 1fr);
+  gap: 35px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 28px 55px;
+}
+
+.manager-note,
+.manager-warning {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: -.04em;
+  line-height: 1.7;
+}
+
+.image-slots {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.image-slot {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  padding: 13px 0;
+}
+
+.image-slot strong {
+  display: block;
+  font-size: 13px;
+  letter-spacing: -.04em;
+}
+
+.image-slot small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: "Han Sans Neo", Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.image-slot input[type="file"] {
+  max-width: 190px;
+  font-size: 11px;
+}
+
+.slot-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--rose);
+  font-size: 11px;
+}
+
+.manager-actions {
+  display: grid;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.manager-actions button {
+  min-height: 53px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  padding: 0 16px;
+}
+
+.manager-actions .clear-button {
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.manager-actions button:hover {
+  border-color: var(--rose);
+  background: var(--rose);
+  color: var(--ink);
+}
+
+.manager-warning {
+  margin-top: 22px;
+  font-size: 10px;
+}
+
+.manager-preview {
+  min-height: 500px;
+  border: 1px solid var(--line);
+  padding: 18px;
+  background: #ebe5dc;
+}
+
+.preview-label { color: var(--muted); }
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.preview-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1.2;
+  border: 1px solid var(--rose);
+  background: #d9d0c4;
+}
+
+.preview-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-card span {
+  position: absolute;
+  left: 10px;
+  bottom: 9px;
+  color: white;
+  font-family: "Han Sans Neo", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 760px) {
+  .manager-header,
+  .manager-layout { padding-right: 18px; padding-left: 18px; }
+  .manager-layout { grid-template-columns: 1fr; }
+  .manager-preview { order: -1; }
+  .manager-header { align-items: flex-start; flex-direction: column; }
+  .manager-header a { align-self: flex-start; }
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Drama / UI Editor</title>
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header class="editor-topbar">
+      <div>
+        <p class="editor-kicker">THE DRAMA / GUEST TEST</p>
+        <h1>간단 UI 에디터</h1>
+      </div>
+      <a class="preview-link" href="index.html" target="_blank" rel="noreferrer">테스트 열기 ↗</a>
+    </header>
+
+    <main class="editor-layout">
+      <aside class="editor-panel">
+        <p class="panel-intro">왼쪽 값을 바꾸면 오른쪽 미리보기에 바로 반영돼요. 이미지를 직접 업로드하려면 <a href="image-manager.html">이미지 업로더 열기 ↗</a>를 사용하세요.</p>
+
+        <section class="control-group">
+          <div class="group-title"><span>01</span><h2>컬러</h2></div>
+          <label>배경색 <span><input id="night" type="color" /></span></label>
+          <label>종이색 <span><input id="paper" type="color" /></span></label>
+          <label>포인트색 <span><input id="rose" type="color" /></span></label>
+        </section>
+
+        <section class="control-group">
+          <div class="group-title"><span>02</span><h2>폰트</h2></div>
+          <label>한글 폰트 <input id="korean-font" type="text" /></label>
+          <label>영문 폰트 <input id="english-font" type="text" /></label>
+          <label>이름 표시 폰트 <input id="display-font" type="text" /></label>
+          <p class="field-note">Han Sans Neo 파일을 함께 넣으면 방문자에게도 동일하게 보여요. 지금은 지정한 폰트가 없을 때 자동으로 대체 폰트를 사용합니다.</p>
+        </section>
+
+        <section class="control-group">
+          <div class="group-title"><span>03</span><h2>첫 화면 문구</h2></div>
+          <label>왼쪽 이름 <input id="names-left" type="text" /></label>
+          <label>오른쪽 이름 <input id="names-right" type="text" /></label>
+          <label>메인 문장 1 <input id="title-line" type="text" /></label>
+          <label>강조 문장 <input id="title-accent" type="text" /></label>
+          <label>메인 문장 2 <input id="title-end" type="text" /></label>
+          <label>버튼 문구 <input id="button-copy" type="text" /></label>
+        </section>
+
+        <section class="control-group">
+          <div class="group-title"><span>04</span><h2>이미지</h2></div>
+          <label>첫 화면 이미지 <input id="landing-image" type="text" placeholder="assets/landing.jpg" /></label>
+          <label>엠마 결과 이미지 <input id="emma-image" type="text" placeholder="assets/emma.jpg" /></label>
+          <label>찰리 결과 이미지 <input id="charlie-image" type="text" placeholder="assets/charlie.jpg" /></label>
+          <label>레이첼 결과 이미지 <input id="rachel-image" type="text" placeholder="assets/rachel.jpg" /></label>
+          <label>마이크 결과 이미지 <input id="mike-image" type="text" placeholder="assets/mike.jpg" /></label>
+          <p class="field-note">이미지 파일을 같은 폴더의 <code>assets</code>에 넣고, 위 칸에는 파일 경로만 적으면 됩니다.</p>
+        </section>
+
+        <div class="editor-actions">
+          <button id="download-config" class="download-button" type="button">설정 파일 다운로드 ↓</button>
+          <button id="reset-editor" class="reset-button" type="button">현재 설정으로 되돌리기</button>
+        </div>
+
+        <div class="how-to">
+          <strong>사용 방법</strong>
+          <ol>
+            <li>왼쪽 패널에서 색상·폰트·문구를 수정</li>
+            <li>‘설정 파일 다운로드’ 클릭</li>
+            <li>다운로드된 <code>site-config.js</code>를 기존 파일과 교체</li>
+            <li>깃허브에 다시 업로드</li>
+          </ol>
+        </div>
+      </aside>
+
+      <section class="editor-canvas" aria-label="실시간 미리보기">
+        <div class="canvas-label">LIVE PREVIEW / MOBILE LANDING</div>
+        <div id="editor-preview" class="preview-frame">
+          <div class="preview-topbar"><span>THE DRAMA</span><small>GUEST TEST / 01</small></div>
+          <div class="preview-center">
+            <p class="preview-eyebrow">A24 PRESENTS</p>
+            <div class="preview-mark"><span>E</span><i></i><span>C</span></div>
+            <p class="preview-note">THE WEDDING OF</p>
+            <p class="preview-names"><span id="preview-names-left"></span> <em>&amp;</em> <span id="preview-names-right"></span></p>
+            <figure id="preview-landing-image" class="preview-image-container"><img alt="" /></figure>
+            <p class="preview-question"><span class="preview-title-line" id="preview-title-line"></span><br /><span class="preview-title-line"><em id="preview-title-accent"></em><em id="preview-title-end"></em></span></p>
+            <button id="preview-button" type="button">하객 테스트 시작하기 <span>↗</span></button>
+          </div>
+          <div class="preview-foot"><span>THE DRAMA</span><span>COMING SOON</span><span>TEO</span></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="site-config.js"></script>
+    <script src="editor.js"></script>
+  </body>
+</html>
